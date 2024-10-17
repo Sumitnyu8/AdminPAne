@@ -1,0 +1,593 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.register-main {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 400px; /* Fixed width for better alignment */
+}
+
+.register-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.register-button {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.register-button:hover {
+  background-color: #555;
+}
+
+.register-footer {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.register-footer a {
+  color: #333;
+  text-decoration: none;
+}
+
+.register-footer a:hover {
+  text-decoration: underline;
+}
+
+.login-main,
+.register-main {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 400px; /* Fixed width for better alignment */
+}
+
+.login-title,
+.register-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.login-form,
+.register-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-input,
+.register-input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login-button,
+.register-button {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-button:hover,
+.register-button:hover {
+  background-color: #555;
+}
+
+.login-footer,
+.register-footer {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.login-footer a,
+.register-footer a {
+  color: #333;
+  text-decoration: none;
+}
+
+.login-footer a:hover,
+.register-footer a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+/* Profile Styles */
+.profile-main {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width: 90%; /* Width for better responsiveness */
+  max-width: 500px; /* Max width for larger screens */
+  text-align: center; /* Center content */
+}
+
+.profile-title {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.profile-info {
+  margin-bottom: 30px;
+  text-align: left; /* Align text to the left */
+}
+
+.profile-info p {
+  margin: 10px 0; /* Add margin for spacing */
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-input,
+.profile-textarea {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.profile-textarea {
+  resize: vertical; /* Allow vertical resizing */
+  height: 100px; /* Default height */
+}
+
+.profile-button {
+  padding: 12px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.profile-button:hover {
+  background-color: #555;
+}
+
+
+
+
+/* allblogs  */
+/* General container styles */
+.container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 250px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+  color: #ddd;
+}
+
+/* Main content styling */
+.content {
+  flex-grow: 1;
+  padding: 40px;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Category Toggle Bar */
+.category-toggle {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.category-btn {
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  background-color: #5b8cfa;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.category-btn:hover {
+  background-color: #4a78d2;
+}
+
+/* Blog List */
+.blogs-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.blog-item {
+  width: calc(33.333% - 20px);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.blog-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.blog-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.blog-content {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.blog-meta {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .blog-item {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-item {
+    width: 100%;
+  }
+
+  .category-btn {
+    margin: 5px 0;
+    width: 100%;
+  }
+}
+
+
+
+/* addblog  */
+.sidebar {
+  width: 250px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidebar ul li a:hover {
+  color: #ddd;
+}
+
+/* Main content styling */
+.content {
+  flex-grow: 1;
+  padding: 40px;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Form styling */
+.add-blog-form {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+input[type="text"],
+select,
+textarea,
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input[type="file"] {
+  border: none;
+}
+
+.submit-btn {
+  padding: 10px 20px;
+  background-color: #5b8cfa;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.submit-btn:hover {
+  background-color: #4a78d2;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .add-blog-form {
+    padding: 15px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}
+
+
+/* edit delete  */
+
+.blog-actions {
+  margin-top: 10px;
+}
+
+.edit-btn {
+  padding: 8px 12px;
+  background-color: #5b8cfa;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.edit-btn:hover {
+  background-color: #4a78d2;
+}
+
+.delete-btn {
+  padding: 8px 12px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #ff3333;
+}
+
+/* edit blog  */
+.sidebar {
+  width: 250px;
+  background-color: #2c3e50;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: block;
+}
+
+.sidebar ul li a:hover {
+  background-color: #34495e;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Content Area */
+.content {
+  margin-left: 270px; /* Adjusted for sidebar width */
+  padding: 20px;
+  width: calc(100% - 270px);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #34495e;
+}
+
+/* Form Styles */
+.add-blog-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #2c3e50;
+}
+
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea,
+.form-group input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group img {
+  margin-top: 10px;
+  border-radius: 5px;
+  max-width: 150px;
+}
+
+/* Button Styles */
+.submit-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #5b8cfa;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #4a78d2;
+}
+
+/* forgot password */
+
+.forgot-password {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.forgot-password a {
+  color: #007BFF; /* Change this to your desired color */
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline; /* Adds underline on hover */
+}
+
+
+
+
+
+
+
+
+

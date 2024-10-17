@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Blogs</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <script>
+    // Function to show blogs based on selected category
+    function showBlogsByCategory(category) {
+      const allBlogs = document.querySelectorAll('.blog-item');
+      allBlogs.forEach(blog => {
+        if (category === 'all' || blog.dataset.category === category) {
+          blog.style.display = 'block';
+        } else {
+          blog.style.display = 'none';
+        }
+      });
+    }
+
+    // Initially show all blogs
+    window.onload = function() {
+      showBlogsByCategory('all');
+    };
+  </script>
+</head>
+<body>
+  <div class="container">
+    <nav class="sidebar">
+      <ul>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+        <li><a href="/all-blogs">All Blogs</a></li>
+        <li><a href="/add-blog">Add Blog</a></li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <h1>All Blogs</h1>
+
+      <!-- Category Toggle Bar -->
+      <div class="category-toggle">
+        <button class="category-btn" onclick="showBlogsByCategory('all')">All</button>
+        <button class="category-btn" onclick="showBlogsByCategory('education')">Education</button>
+        <button class="category-btn" onclick="showBlogsByCategory('finance')">Finance</button>
+        <button class="category-btn" onclick="showBlogsByCategory('technology')">Technology</button>
+      </div>
+
+      <!-- Blog List -->
+      <div class="blogs-container">
+        <% blogs.forEach(blog => { %>
+          <div class="blog-item" data-category="<%= blog.category %>">
+            <h3 class="blog-title"><%= blog.title %></h3>
+            <img class="blog-image" src="/uploads/<%= blog.image %>" alt="<%= blog.title %>">
+            <p class="blog-content"><%= blog.content.substring(0, 100) %>...</p>
+            <p class="blog-meta">
+              <em>Category: <%= blog.category.charAt(0).toUpperCase() + blog.category.slice(1) %></em><br>
+              <em>By: <%= blog.author %></em><br>
+              <em>Published on: <%= blog.createdAt.toDateString() %></em>
+            </p>
+
+            <!-- Edit and Delete Buttons -->
+            <div class="blog-actions">
+              <a href="/edit-blog/<%= blog._id %>" class="edit-btn">Edit</a>
+              <form action="/delete-blog/<%= blog._id %>" method="POST" style="display:inline;">
+                <button type="submit" class="delete-btn">Delete</button>
+              </form>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

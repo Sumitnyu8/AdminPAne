@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <nav class="sidebar">
+      <ul>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+        <li><a href="/register">Register Admin</a></li>
+        <li><a href="/all-blogs">All Blogs</a></li>
+        <li><a href="/add-blog">Add Blog</a></li>
+        <li><a href="/add-subtopic/:category">Add Blog</a></li>
+      </ul>
+    </nav>
+    
+
+    <main>
+      <h1>Welcome to your Dashboard, <%= admin.username %>!</h1>
+      <div>
+        <h2>Overview</h2>
+        <p>Here is a quick summary of your activity.</p>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
