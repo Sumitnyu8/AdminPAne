@@ -3,7 +3,6 @@ const session = require("express-session");
 const path = require("path");
 const adminRoutes = require("./routes/admin");
 const blogRoutes = require("./routes/blogRoutes");
-const authRoutes = require("./routes/authRoutes");
 const mongoose = require("mongoose");
 
 const app = express();
@@ -36,7 +35,6 @@ app.set("view engine", "ejs");
 // Routes
 app.use("/", adminRoutes);
 app.use("/", blogRoutes);
-app.use("/", authRoutes);
 
 // Start server
 const PORT = process.env.PORT || 3000;

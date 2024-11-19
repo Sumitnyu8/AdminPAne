@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const Blog = require('../models/Blog');
-const Subtopic = require('../models/Subtopic');
 
 // Multer setup for image uploads
 const storage = multer.diskStorage({
@@ -77,79 +76,5 @@ router.post('/delete-blog/:id', async (req, res) => {
   res.redirect('/all-blogs');
 });
 
-// add subtopics 
-
-// Route to render the 'Add Subtopic' page
-router.get('/add-subtopic', (req, res) => {
-  res.render('addSubtopic');
-});
-
-// Route to handle adding a new subtopic
-router.post('/add-subtopic', async (req, res) => {
-  const { category, subtopic } = req.body;
-  
-  try {
-    const categoryBlogs = await Blog.find({ category });
-    
-    // Update each blog under the category with the new subtopic
-    if (categoryBlogs.length > 0) {
-      await Blog.updateMany(
-        { category },
-        { $addToSet: { subtopics: subtopic } } // Add subtopic if it's not already present
-      );
-    }
-    
-    res.redirect('/all-blogs');
-  } catch (err) {
-    res.status(500).send('Error adding subtopic');
-  }
-});
-
-// subtopics
-
-// Route to display add subtopic page for a specific category
-router.get('/add-subtopic/:category', async (req, res) => {
-  const category = req.params.category;
-  const subtopics = await Subtopic.find({ category }); // Fetch subtopics for the category
-  res.render('addSubtopic', { category, subtopics });
-});
-
-// Route to add a new subtopic
-router.post('/add-subtopic/:category', async (req, res) => {
-  const { subtopic } = req.body;
-  const category = req.params.category;
-
-  try {
-    const newSubtopic = new Subtopic({ name: subtopic, category });
-    await newSubtopic.save();
-    res.redirect(`/add-subtopic/${category}`);
-  } catch (err) {
-    res.status(500).send('Error adding subtopic');
-  }
-});
-
-// Route to edit a subtopic (GET)
-router.get('/edit-subtopic/:id', async (req, res) => {
-  const subtopic = await Subtopic.findById(req.params.id);
-  res.render('editSubtopic', { subtopic });
-});
-
-// Route to update a subtopic (POST)
-router.post('/edit-subtopic/:id', async (req, res) => {
-  const { subtopic } = req.body;
-
-  try {
-    await Subtopic.findByIdAndUpdate(req.params.id, { name: subtopic });
-    res.redirect(`/add-subtopic/${subtopic.category}`);
-  } catch (err) {
-    res.status(500).send('Error updating subtopic');
-  }
-});
-
-// Route to delete a subtopic
-router.post('/delete-subtopic/:id', async (req, res) => {
-  await Subtopic.findByIdAndDelete(req.params.id);
-  res.redirect(`/add-subtopic/${req.body.category}`); // Redirect back to the category page
-});
 
 module.exports = router;
