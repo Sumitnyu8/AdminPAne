@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const multer = require('multer');
 const Blog = require('../models/Blog');
+const Admin = require("../models/Admin");
 
 // Multer setup for image uploads
 const storage = multer.diskStorage({
@@ -17,6 +18,7 @@ const upload = multer({ storage: storage });
 
 // Route to render the 'Add Blog' page
 router.get('/add-blog', (req, res) => {
+  if (!req.session.admin) return res.redirect("/");
   res.render('addBlog');
 });
 
@@ -38,6 +40,7 @@ router.post('/add-blog', upload.single('image'), async (req, res) => {
 // Route to display all blogs categorized by headings
 router.get('/all-blogs', async (req, res) => {
   try {
+    if (!req.session.admin) return res.redirect("/");
     const blogs = await Blog.find().sort({ createdAt: -1 }); // Fetch blogs in descending order
     res.render('allBlogs', { blogs });
   } catch (err) {

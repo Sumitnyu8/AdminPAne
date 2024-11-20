@@ -72,13 +72,13 @@ router.post('/register', async (req, res) => {
 
 // Admin dashboard
 router.get("/dashboard", (req, res) => {
-  if (!req.session.admin) return res.redirect("/login");
+  if (!req.session.admin) return res.redirect("/");
   res.render("dashboard", { admin: req.session.admin });
 });
 
 // Admin profile page
 router.get("/profile", (req, res) => {
-  if (!req.session.admin) return res.redirect("/login");
+  if (!req.session.admin) return res.redirect("/");
   res.render("profile", { admin: req.session.admin });
 });
 
